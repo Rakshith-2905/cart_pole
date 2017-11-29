@@ -1,0 +1,19 @@
+<launch>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<!--<arg name="world_name" value="$(find cart_pole)/worlds/mybot.world"/>-->
+		<arg name="gui" value="true"/>
+	</include>
+	<!-- urdf xml robot description loaded on the Parameter Server, converting the xacro into a proper urdf file-->
+
+        <!-- URDF XML Pheeno robot description loaded on the parameter server. -->
+        <param name="robot_description" command="$(find xacro)/xacro.py '$(find cart_pole)/urdf/mybot.xacro'"/>
+
+        <!-- Start Joint State Publisher -->
+        <!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"></node>-->
+
+	<!-- push robot_description to factory and spawn robot in gazebo -->
+	<node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model mybot" />
+
+    	<!-- Run python script that will determine random movement. -->
+    	<!--<node name="mybot_random_walk" pkg="cart_pole" type="random_walk.py" args="-n 01"/>-->
+</launch>
