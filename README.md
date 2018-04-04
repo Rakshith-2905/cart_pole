@@ -15,7 +15,7 @@ This project is to create a model of a pole on a cart and control the accelerati
 ## How to Compile the repository
 
 1. Change your woking directory to your catkin work space `$ cd ~/your_catkin_ws/src`
-2. Clone this repository to the current folder `$ git clone -b kinetic-devel https://github.com/Rakshith-2905/smart_car_basic`
+2. Clone this repository to the current folder `$ git clone -b kinetic-devel https://github.com/Rakshith-2905/cart_pole`
 3. Make this to add this to the ROS packages to do that run `$cd ..` to go back to the catkin workspace and then run `$ catkin_make` to compile the new repository.
 
 ## How to run the project
